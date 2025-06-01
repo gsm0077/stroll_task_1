@@ -1,3 +1,3 @@
 # designs
 
-This is the data app that will find your future partner.
+This is the dating app that will let you find your future partner.
