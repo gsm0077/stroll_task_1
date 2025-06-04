@@ -39,6 +39,9 @@ dependencies:
   get_it: ^8.0.3
   go_router: ^15.1.2
   flutter_gen: ^5.10.0
+  flutter_svg: ^2.1.0
+  flutter_toggle_tab: ^1.5.1
+  dashed_circular_progress_bar: ^0.0.6
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +54,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
   build_runner: ^2.4.15
+  flutter_gen_runner:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -64,9 +68,12 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/svgs/bottom/
+    - assets/svgs/dashboard/
+    - assets/svgs/flames/
+    - assets/pngs/
+    - assets/jpg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -90,6 +97,19 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+  fonts:
+    - family: ProximaNova
+      fonts:
+        - asset: fonts/ProximaNova-Bold-Italic.otf
+          weight: 700
+        - asset: fonts/ProximaNova-Bold.otf
+          weight: 700
+        - asset: fonts/ProximaNova-Regular.otf
+        - asset: fonts/ProximaNova-Semibold-Italic.otf
+          weight: 500
+        - asset: fonts/ProximaNova-Semibold.otf
+          weight: 500
+        - asset: fonts/ProximaNova-Thin-Italic.otf
+        - asset: fonts/ProximaNova-Thin.otf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
