@@ -1,11 +1,9 @@
 // app_router.dart
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:stroll/presentation/auth/screens/login_screens.dart';
 import 'package:stroll/presentation/chats/screens/chat_screen_single.dart';
 import 'package:stroll/presentation/chats/screens/chat_start_ui.dart';
-import 'package:stroll/presentation/chats/screens/single_chat_screen.dart.dart';
-import 'package:stroll/presentation/main_navigation/widgets/defaultwidget.dart';
+import 'package:stroll/presentation/main_navigation/widgets/defaultWidget.dart';
 import 'package:stroll/routes/routes_list.dart';
 
 final router = GoRouter(
