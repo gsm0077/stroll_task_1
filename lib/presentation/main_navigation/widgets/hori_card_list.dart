@@ -40,9 +40,11 @@ class HorizontalCardList extends StatelessWidget {
 
             return GestureDetector(
               onTap: () {
-                context.push(RoutesList.chatStartUi);
-
-                // context.push(RoutesList.singleChatScreen);
+                if ((index + 1).isEven) {
+                  context.push(RoutesList.chatScreenSingle);
+                } else {
+                  context.push(RoutesList.chatStartUi);
+                }
               },
               child: Hero(
                 tag: "imageScale",

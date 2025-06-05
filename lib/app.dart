@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: FontFamily.proximaNova, // 👈 your font family name here
         ),

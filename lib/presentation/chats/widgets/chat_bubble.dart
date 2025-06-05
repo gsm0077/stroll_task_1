@@ -16,7 +16,7 @@ class ChatBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: isSender ? MainAxisAlignment.start : MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         if (isSender && avatarUrl != null) CircleAvatar(backgroundImage: NetworkImage(avatarUrl!), radius: 14),
         if (isSender) SizedBox(width: 8),
