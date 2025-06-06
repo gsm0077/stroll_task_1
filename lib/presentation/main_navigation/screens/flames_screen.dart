@@ -42,9 +42,61 @@ class _FlamesScreenState extends State<FlamesScreen> {
             ),
           ),
           Positioned.fill(
-            child: Image.asset(
-              Assets.pngs.fade.path,
-              fit: BoxFit.cover,
+            child: Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withOpacity(0.4),
+                        Colors.black.withOpacity(0.123),
+                        Colors.transparent,
+                      ],
+                      stops: [0.0, 0.14, 0.234],
+                    ),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: RadialGradient(
+                      center: Alignment(0.0013, -0.6256),
+                      radius: 0.75,
+                      colors: [
+                        Colors.black.withOpacity(0.045),
+                        Colors.black.withOpacity(0.107),
+                        Colors.black.withOpacity(0.135),
+                        Colors.black.withOpacity(0.195),
+                        Colors.black.withOpacity(0.24),
+                      ],
+                      stops: [0.0, 0.6328, 0.7566, 0.8844, 1.0],
+                    ),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.transparent,
+                          Color.fromRGBO(13, 14, 18, 0.28),
+                          Color.fromRGBO(11, 12, 15, 0.64),
+                          Color.fromRGBO(9, 11, 13, 0.8),
+                          Colors.black,
+                        ],
+                        // stops: [0.4397, 0.486, 0.5252, 0.5514, 0.5694],
+                        stops: [
+                          0.53,
+                          0.575,
+                          0.615,
+                          0.64,
+                          0.66
+                        ]),
+                  ),
+                ),
+              ],
             ),
           ),
           Padding(
@@ -354,7 +406,7 @@ class OptionsButton extends StatelessWidget {
           changeOption(myOption);
         },
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 13.5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -370,6 +422,9 @@ class OptionsButton extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(
+                width: 2,
+              ),
               Container(
                 width: 20,
                 height: 20,
