@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:stroll/core/constants/app_colors.dart';
 import 'package:stroll/gen/assets.gen.dart';
 import 'package:stroll/gen/fonts.gen.dart';
+import 'package:stroll/presentation/main_navigation/widgets/flames_icon_test.dart';
 
 class FlamesScreen extends StatefulWidget {
   const FlamesScreen({super.key});
@@ -147,49 +148,25 @@ class _FlamesScreenState extends State<FlamesScreen> {
                   children: [
                     Positioned(
                       top: -30,
-                      // left: 5,
+                      left: 17,
+                      child: FlamesIconTest(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20.0),
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          Container(
-                            width: 65,
-                            height: 65,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                width: 8,
-                                color: Color(0xff0D0F11),
-                              ),
-                              borderRadius: BorderRadius.circular(100),
-                              image: DecorationImage(
-                                image: AssetImage(Assets.pngs.joey.path),
-                                // fit: BoxFit.fill, // Or use BoxFit.contain/cover/fill
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 14.0),
+                          Spacer(),
+                          Expanded(
+                            flex: 3,
                             child: Text(
-                              'Angelina, 28',
-                              style: TextStyle(color: Color(0xffF5F5F5), fontWeight: FontWeight.bold, fontSize: 11),
+                              'What is your favorite time of the day?',
+                              style: TextStyle(color: Color(0xffF5F5F5), fontWeight: FontWeight.bold, fontSize: 20),
                               softWrap: true,
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Spacer(),
-                        Expanded(
-                          flex: 4,
-                          child: Text(
-                            'What is your favorite time of the day?',
-                            style: TextStyle(color: Color(0xffF5F5F5), fontWeight: FontWeight.bold, fontSize: 20),
-                            softWrap: true,
-                          ),
-                        ),
-                      ],
                     )
                   ],
                 ),
@@ -198,7 +175,11 @@ class _FlamesScreenState extends State<FlamesScreen> {
                   child: Text(
                     "“Mine is definitely the peace in the morning.”",
                     softWrap: true,
-                    style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic, color: Color(0xffCBC9FF)),
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.italic,
+                        color: Color(0xffCBC9FF).withOpacity(0.7)),
                   ),
                 ),
                 Padding(
