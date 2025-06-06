@@ -30,18 +30,20 @@ class _FlamesScreenState extends State<FlamesScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Colors.black,
       body: Stack(
         children: [
           Positioned.fill(
+            top: -110,
             child: Image.asset(
               Assets.jpg.sunrise.path,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
           Positioned.fill(
-            child: SvgPicture.asset(
-              Assets.svgs.dashboard.fade,
+            child: Image.asset(
+              Assets.pngs.fade.path,
               fit: BoxFit.cover,
             ),
           ),
@@ -57,34 +59,40 @@ class _FlamesScreenState extends State<FlamesScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Stack(
-                            children: [
-                              // Stroke
-                              Text(
-                                "Stroll Bonfire",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 34,
-                                  foreground: Paint()
-                                    ..style = PaintingStyle.stroke
-                                    ..strokeWidth = 2
-                                    ..color = Color(0xffB3ADF6),
-                                ),
+                          SizedBox(
+                            height: 40,
+                            child: Text(
+                              'Stroll Bonfire',
+                              style: TextStyle(
+                                fontFamily: FontFamily.proximaNova,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 34,
+                                height: 1.0, // line-height 100%
+                                letterSpacing: 0.0,
+                                color: Color(0xFFCCC8FF),
+                                shadows: [
+                                  Shadow(
+                                    offset: Offset(0, 0),
+                                    blurRadius: 7.9,
+                                    color: Color(0x33000000),
+                                  ),
+                                  Shadow(
+                                    offset: Offset(0, 0),
+                                    blurRadius: 2,
+                                    color: Color(0xFFBEBEBE),
+                                  ),
+                                  Shadow(
+                                    offset: Offset(0, 1),
+                                    blurRadius: 2,
+                                    color: Color(0x8024232F),
+                                  ),
+                                ],
                               ),
-                              // Fill
-                              Text(
-                                "Stroll Bonfire",
-                                style: TextStyle(
-                                  color: Color(0xffCCC8FF),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 34,
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                           Icon(
                             Icons.expand_more,
-                            size: 35,
+                            size: 25,
                             color: Color(0xffCBC9FF),
                           )
                         ],
@@ -99,6 +107,7 @@ class _FlamesScreenState extends State<FlamesScreen> {
                                 Assets.svgs.dashboard.clock,
                                 width: 13,
                                 height: 15,
+                                color: Color(0xffffffff),
                               ),
                               SizedBox(
                                 width: 4,
@@ -106,9 +115,12 @@ class _FlamesScreenState extends State<FlamesScreen> {
                               Text(
                                 '22h 00m',
                                 style: TextStyle(
-                                  color: Color(0xffFFFFFF),
-                                  fontWeight: FontWeight.bold,
+                                  fontFamily: FontFamily.proximaNova,
+                                  fontWeight: FontWeight.w600,
                                   fontSize: 12,
+                                  height: 1.0, // line-height: 100%
+                                  letterSpacing: 0.0,
+                                  color: Colors.white, // #FFFFFF
                                 ),
                               ),
                             ],
@@ -116,25 +128,33 @@ class _FlamesScreenState extends State<FlamesScreen> {
                           SizedBox(
                             width: 10,
                           ),
-                          Row(
-                            children: [
-                              SvgPicture.asset(
-                                Assets.svgs.dashboard.user,
-                                width: 13,
-                                height: 15,
-                              ),
-                              SizedBox(
-                                width: 4,
-                              ),
-                              Text(
-                                '103',
-                                style: TextStyle(
-                                  color: Color(0xffFFFFFF),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
+                          SizedBox(
+                            height: 16,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  Assets.svgs.dashboard.user,
+                                  width: 13,
+                                  height: 15,
+                                  color: Color(0xffffffff),
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 4,
+                                ),
+                                Text(
+                                  '103',
+                                  style: TextStyle(
+                                    fontFamily: FontFamily.proximaNova,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12,
+                                    height: 1.0, // line-height: 100%
+                                    letterSpacing: 0.0,
+                                    color: Colors.white, // #FFFFFF
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       )
@@ -147,7 +167,7 @@ class _FlamesScreenState extends State<FlamesScreen> {
                   clipBehavior: Clip.none,
                   children: [
                     Positioned(
-                      top: -30,
+                      top: -35,
                       left: 17,
                       child: FlamesIconTest(),
                     ),
@@ -161,7 +181,13 @@ class _FlamesScreenState extends State<FlamesScreen> {
                             flex: 3,
                             child: Text(
                               'What is your favorite time of the day?',
-                              style: TextStyle(color: Color(0xffF5F5F5), fontWeight: FontWeight.bold, fontSize: 20),
+                              style: TextStyle(
+                                color: Color(0xffF5F5F5),
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20,
+                                height: 1.0, // 100% line height
+                                fontFamily: FontFamily.proximaNova,
+                              ),
                               softWrap: true,
                             ),
                           ),
@@ -170,16 +196,22 @@ class _FlamesScreenState extends State<FlamesScreen> {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),
                   child: Text(
                     "“Mine is definitely the peace in the morning.”",
                     softWrap: true,
                     style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
+                        fontFamily: FontFamily.proximaNova,
+                        fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.italic,
-                        color: Color(0xffCBC9FF).withOpacity(0.7)),
+                        fontSize: 12,
+                        height: 1.2, // 120% line height
+                        letterSpacing: 0,
+                        color: Color.fromRGBO(203, 201, 255, 0.7)),
                   ),
                 ),
                 Padding(
@@ -322,17 +354,17 @@ class OptionsButton extends StatelessWidget {
           changeOption(myOption);
         },
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12), // Internal padding
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12), // Rounded corners
+            borderRadius: BorderRadius.circular(12),
           ),
           side: myOption == selectedOption
               ? BorderSide(
-                  color: AppColors.baseViolet, // Border color
-                  width: 2, // Border width
+                  color: AppColors.baseViolet,
+                  width: 2,
                 )
               : null,
-          backgroundColor: Color(0xff232A2E), // Optional background color
+          backgroundColor: Color(0xff232A2E),
         ),
         child: Center(
           child: Row(
@@ -343,17 +375,16 @@ class OptionsButton extends StatelessWidget {
                 height: 20,
                 decoration: BoxDecoration(
                   color: myOption == selectedOption ? AppColors.baseViolet : null,
-                  shape: BoxShape.circle, // Makes the container circular
-                  // color: Colors.white, // Background color
+                  shape: BoxShape.circle,
                   border: Border.all(
-                    color: myOption == selectedOption ? AppColors.baseViolet : Color(0xffF5F5F5), // Border color
-                    width: 1, // Border width
+                    color: myOption == selectedOption ? AppColors.baseViolet : Color.fromRGBO(196, 196, 196, 1),
+                    width: 1,
                   ),
                 ),
                 child: Center(
                   child: Text(
                     optionName,
-                    style: TextStyle(fontSize: 12, color: Color(0xffF5F5F5)),
+                    style: TextStyle(fontSize: 12, color: Color.fromRGBO(196, 196, 196, 1)),
                   ),
                 ),
               ),
@@ -364,7 +395,13 @@ class OptionsButton extends StatelessWidget {
                 child: Text(
                   description,
                   softWrap: true,
-                  style: TextStyle(fontSize: 14, color: Color(0xffC4C4C4)),
+                  style: TextStyle(
+                    fontSize: 14, color: Color.fromRGBO(196, 196, 196, 1), fontFamily: FontFamily.proximaNova,
+                    fontWeight: FontWeight.w400,
+
+                    height: 1.05, // 105% line height
+                    letterSpacing: 0,
+                  ),
                 ),
               ),
             ],

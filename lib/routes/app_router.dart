@@ -12,19 +12,6 @@ final router = GoRouter(
       path: '/',
       builder: (context, state) => const DefaultBottomWidget(),
     ),
-    // GoRoute(
-    //   path: RoutesList.defaultBottom,
-    //   builder: (context, state) => DefaultBottomWidget(),
-    // ),
-    // GoRoute(
-    //   path: RoutesList.singleChatScreen,
-    //   pageBuilder: (context, state) {
-    //     return CupertinoPage(
-    //       key: state.pageKey,
-    //       child: SingleChatScreen(),
-    //     );
-    //   },
-    // ),
     GoRoute(
       path: RoutesList.chatStartUi,
       builder: (context, state) => ChatStartUi(),

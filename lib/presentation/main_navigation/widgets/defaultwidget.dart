@@ -32,6 +32,7 @@ class _DefaultBottomWidgetState extends State<DefaultBottomWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Colors.black,
       bottomNavigationBar: BottomNav(currentIndex: currentIndex, onTap: onBottomIconTapped),
       body: _pages[currentIndex],

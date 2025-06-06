@@ -111,5 +111,7 @@ flutter:
           weight: 500
         - asset: fonts/ProximaNova-Thin-Italic.otf
         - asset: fonts/ProximaNova-Thin.otf
+        - asset: fonts/ProximaNova-Alt-Regular-Italic.otf
+          weight: 400
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

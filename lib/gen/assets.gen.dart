@@ -28,8 +28,11 @@ class $AssetsPngsGen {
   /// File path: assets/pngs/Joey.png
   AssetGenImage get joey => const AssetGenImage('assets/pngs/Joey.png');
 
+  /// File path: assets/pngs/fade.png
+  AssetGenImage get fade => const AssetGenImage('assets/pngs/fade.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [joey];
+  List<AssetGenImage> get values => [joey, fade];
 }
 
 class $AssetsSvgsGen {
